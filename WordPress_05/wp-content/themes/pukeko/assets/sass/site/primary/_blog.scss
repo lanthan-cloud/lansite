@@ -1,0 +1,376 @@
+
+/* Blog Main Post Card */
+.entry-link {
+	display: block;
+	padding-bottom: $spacing-mobile-4;
+	@include transition-posthover;
+	@include breakpoint(m) {
+		padding-bottom: $spacing-desktop-4;
+	}
+}
+
+.posts-container .hentry {
+	margin-bottom: $spacing-mobile-6;
+	@include breakpoint(m) {
+		margin-bottom: $spacing-desktop-6;
+	}
+}
+
+.entry-content,
+.entry-summary,
+.page-content {
+	margin: 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0;
+}
+
+/* Entry Thumbnail */
+.hentry .post-thumb a {
+	display: inline-block;
+	line-height: 0;
+	position: relative;
+}
+
+/* Entry Header */
+.hentry .entry-header {
+	padding: $spacing-mobile-4 $spacing-mobile-4 0;
+	@include breakpoint(m) {
+		padding: $spacing-desktop-4 $spacing-desktop-4 0;
+	}
+}
+
+.hentry .entry-summary {
+	padding: $spacing-2 0 0;
+}
+
+/* Entry Meta Elements */
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.group-blog .byline,
+.single .byline {
+	display: block;
+	@include breakpoint(m) {
+		display: inline-block;
+		padding: 0 3px 0 0;
+	}
+}
+
+/* Entry Footer */
+.entry-cats a {
+	display: inline;
+}
+
+.posts-container .hentry .entry-footer {
+	margin-left: $spacing-mobile-4;
+	margin-right: $spacing-mobile-4;
+	padding-top: $spacing-2;
+	@include breakpoint(m) {
+		margin-left: $spacing-desktop-4;
+		margin-right: $spacing-desktop-4;
+	}
+}
+
+.no-postcats .posts-container .hentry .entry-footer {
+	padding-top: 28px;
+	@include breakpoint(m) {
+		padding-top: 37px;
+	}
+}
+
+.no-postcats.no-postdate.no-postcommentscount .posts-container .hentry .entry-footer {
+	padding-top: 0;
+	@include breakpoint(m) {
+		padding-top: 0;
+	}
+}
+
+.entry-link:hover .entry-cats {
+	visibility: hidden;
+}
+
+.no-postdate.no-postcommentscount .entry-link:hover .entry-cats {
+	visibility: visible;
+}
+
+.entry-time-comments {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: block;
+}
+
+.entry-link .entry-comments,
+.entry-link .posted-on {
+	display: none;
+}
+
+.entry-link:hover .entry-comments,
+.entry-link:hover .posted-on {
+	display: inline;
+}
+
+.entry-link .posted-on:after,
+.sticky .author:after,
+.sticky .posted-on:after,
+.entry-meta .author:after,
+.entry-meta .posted-on:after,
+.nav-links .entry-cats span:after,
+.logged-in .comment-metadata .edit-link:before,
+.comment-metadata .reply:before {
+	content: "\002C";
+}
+
+.no-postcommentscount .entry-link .entry-comments,
+.no-postcommentscount .entry-comments {
+	display: none;
+}
+
+.no-postcommentscount .posted-on:after {
+	content: "";
+}
+
+/* Bigger Blog Cards (2-columns and 1-column) */
+.blog.sidebar-hide.blog-2-column .entry-link,
+.blog-archive.sidebar-hide.blog-2-column .entry-link,
+.blog.sidebar-show.blog-1-column .entry-link,
+.blog-archive.sidebar-show.blog-1-column .entry-link {
+	@include breakpoint(l) {
+		padding-bottom: $spacing-desktop-7;
+	}
+}
+
+.blog.sidebar-hide.blog-2-column .hentry .entry-header,
+.blog-archive.sidebar-hide.blog-2-column .hentry .entry-header,
+.blog.sidebar-show.blog-1-column .hentry .entry-header,
+.blog-archive.sidebar-show.blog-1-column .hentry .entry-header {
+	@include breakpoint(l) {
+		padding: $spacing-desktop-7 $spacing-desktop-7 0;
+	}
+}
+
+.blog.sidebar-hide.blog-2-column .posts-container .hentry .entry-footer,
+.blog-archive.sidebar-hide.blog-2-column .posts-container .hentry .entry-footer,
+.blog.sidebar-show.blog-1-column .posts-container .hentry .entry-footer,
+.blog-archive.sidebar-show.blog-1-column .posts-container .hentry .entry-footer {
+	@include breakpoint(l) {
+		margin-left: $spacing-desktop-7;
+		margin-right: $spacing-desktop-7;
+	}
+}
+
+/* Bigger Blog Cards (1-column layout) */
+.blog.sidebar-hide.blog-1-column .entry-link,
+.blog-archive.sidebar-hide.blog-1-column .entry-link {
+	padding-bottom: $spacing-mobile-8;
+	@include breakpoint(l) {
+		padding-bottom: $spacing-desktop-8;
+	}
+}
+
+.blog.sidebar-hide.blog-1-column .hentry .entry-header,
+.blog-archive.sidebar-hide.blog-1-column .hentry .entry-header {
+	padding: $spacing-mobile-8 $spacing-mobile-8 0;
+	@include breakpoint(l) {
+		max-width: $content-width;
+		margin: 0 auto;
+		padding: $spacing-desktop-8 0 0;
+	}
+}
+
+.blog.sidebar-hide.blog-1-column .posts-container .hentry .entry-footer,
+.blog-archive.sidebar-hide.blog-1-column .posts-container .hentry .entry-footer {
+	margin-left: $spacing-mobile-8;
+	margin-right: $spacing-mobile-8;
+	@include breakpoint(l) {
+		max-width: $content-width;
+		margin: 0 auto;
+	}
+}
+
+/* Sticky Posts */
+.blog.sidebar-hide.blog-1-column .posts-container .sticky-container .sticky .entry-header,
+.blog-archive.sidebar-hide.blog-1-column .posts-container .sticky-container .sticky .entry-header {
+	padding: 0 0 $spacing-mobile-4;
+	@include breakpoint(m) {
+		padding: 0 $spacing-desktop-6 $spacing-desktop-4 0;
+	}
+	@include breakpoint(xl) {
+		width: 43.333333333333333%;
+	}
+}
+
+.blog.sidebar-hide .posts-container .sticky-container .sticky .entry-footer,
+.blog.sidebar-show .posts-container .sticky-container .sticky .entry-footer {
+	margin-left: 0;
+	margin-right: 0;
+	padding-top: 0;
+	padding-bottom: $spacing-mobile-9;
+	@include breakpoint(m) {
+		padding-bottom: $spacing-desktop-9;
+	}
+	@include breakpoint(xl) {
+		margin-left: 0;
+		margin-right: 0;
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.blog.sidebar-show .posts-container .sticky-container .sticky .entry-footer {
+	@include breakpoint(xl) {
+		position: relative;
+		bottom: auto;
+		padding-bottom: 0;
+	}
+}
+
+/* Hidden Elements (via theme options settings) */
+.no-postauthor .author,
+.no-postauthor .byline,
+.no-postauthor .author-avatar,
+.no-postcats .entry-cats,
+.no-postdate .entry-date,
+.no-postdate .posted-on,
+.no-posttags .entry-tags,
+.single-post.no-postauthor .author-avatar,
+.no-postauthor .authorbox-wrap {
+	display: none;
+}
+
+.single-post.no-postauthor.no-postdate.no-postcommentscount .entry-header .entry-title,
+.single-post.no-postauthor.no-postdate.no-postcommentscount .author-meta-info {
+	padding: 0;
+}
+
+
+/* Blog Archives */
+.blog-archive .page-header {
+	padding-bottom: $spacing-mobile-9;
+	margin-bottom: $spacing-mobile-9;
+	border-bottom: 1px solid $border-dark;
+	@include breakpoint(m) {
+		padding-bottom: $spacing-desktop-9;
+		margin-bottom: $spacing-desktop-9;
+	}
+}
+
+.blog-archive .page-header .page-title span {
+	display: block;
+}
+
+.archive .page-header .page-title span:after {
+	content: '\003A';
+}
+
+.blog-archive .page-header p {
+	margin: $spacing-2 0 0 0;
+}
+
+.archive.author .authorbox-wrap {
+	border-top: none;
+	padding: 0;
+}
+
+.archive.author .page-header .page-title {
+	display: none;
+}
+
+/* Blog Sticky Post */
+.blog .posts-container .sticky-container .sticky,
+.blog-3-column .posts-container .sticky-container .sticky {
+	display: block;
+	width: auto;
+	flex-basis: 100% !important;
+	padding: 0;
+	margin-bottom: $spacing-mobile-9;
+	border-bottom: 1px solid $border-dark;
+	@include breakpoint(m) {
+		margin-bottom: $spacing-desktop-9;
+	}
+	@include breakpoint(l) {
+		flex-basis: 100% !important;
+	}
+	@include breakpoint(xl) {
+		padding-bottom: $spacing-desktop-9;
+	}
+}
+
+.blog.sidebar-show.sidebar-show-post .posts-container .sticky-container .sticky {
+	@include breakpoint(xl) {
+		padding-bottom: $spacing-desktop-9;
+	}
+}
+
+.posts-container .sticky-container .sticky .entry-header,
+.blog.sidebar-hide.blog-2-column .sticky .entry-header {
+	float: initial;
+	padding: 0 0 $spacing-mobile-4;
+	@include breakpoint(m) {
+		padding: 0 $spacing-desktop-6 $spacing-desktop-4 0;
+	}
+	@include breakpoint(xl) {
+		float: left;
+		width: 43.333333333333333%;
+	}
+}
+
+.sidebar-show .posts-container .sticky-container .sticky .entry-header {
+	width: auto;
+	float: none;
+	@include breakpoint(m) {
+		padding: 0 0 $spacing-desktop-6;
+	}
+}
+
+.posts-container .sticky-container .sticky .entry-meta {
+	padding-bottom: $spacing-2;
+}
+
+.single-post .posted-on a,
+.sticky-container .sticky .posted-on a {
+	padding-left: 4px;
+}
+
+.sticky-container .sticky .more-link {
+	display: none;
+}
+
+.blog .sticky-container .sticky .post-thumb {
+	padding: 0 0 $spacing-mobile-6;
+	@include breakpoint(m) {
+		padding: 0 0 $spacing-desktop-6;
+	}
+}
+
+.blog.sidebar-hide .sticky-container .sticky .post-thumb {
+	@include breakpoint(xl) {
+		width: 56.666666666666667%;
+		float: right;
+		padding: 0;
+	}
+}
+
+.sticky-container .sticky .post-thumb {
+	position: relative;
+}
+
+.sidebar-show .sticky-container .sticky .post-thumb {
+	width: auto;
+	float: none;
+}
+
+.sticky-container .sticky .byline {
+	display: inline-block;
+	padding-right: 4px;
+}
+
+.divider {
+	display: block;
+	height: $spacing-desktop-5;
+}

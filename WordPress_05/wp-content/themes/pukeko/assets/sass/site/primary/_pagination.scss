@@ -1,0 +1,234 @@
+/* Pagination - Blog */
+.site-main .navigation,
+.site-main .post-navigation {
+	margin: 0;
+	@include f1-body3;
+	clear: both;
+}
+
+.blog .site-main .navigation,
+.archive .site-main .navigation,
+.search-results .site-main .navigation {
+	padding-bottom: $spacing-mobile-8;
+	@include breakpoint(s) {
+		margin-left: $spacing-2;
+		margin-right: $spacing-2;
+	}
+	@include breakpoint(m) {
+		margin-left: $spacing-3;
+		margin-right: $spacing-3;
+		padding-bottom: $spacing-desktop-8;
+	}
+}
+
+.blog .site-main .navigation .nav-links,
+.archive .site-main .navigation .nav-links,
+.search-results .site-main .navigation .nav-links {
+	border-top: 1px solid $border-dark;
+	padding-top:  $spacing-mobile-8;
+	@include breakpoint(m) {
+		padding-top:  $spacing-desktop-8;
+	}
+}
+
+.site-main .comment-navigation {
+	padding: $spacing-2 0 0 0;
+}
+
+.comment-navigation .nav-links {
+	text-align: center;
+	display: block;
+	border-top: solid 1px $border-dark;
+	padding: $spacing-3 0 $spacing-mobile-4;
+	clear: both;
+	@include breakpoint(m) {
+		padding: $spacing-3 0 $spacing-desktop-4;
+	}
+}
+
+.nav-links {
+	text-align: center;
+	clear: both;
+}
+
+.blog .nav-links {
+	justify-content: center;
+}
+
+.pagination-first-page .nav-links {
+	justify-content: flex-end;
+}
+
+.pagination .page-numbers,
+.pagination .current,
+.pagination .dots {
+	margin: 0 $spacing-1;
+	background: transparent;
+	line-height: 1;
+	@include breakpoint(m) {
+		width: $spacing-desktop-7;
+		height: $spacing-desktop-7;
+		padding-top: 21px;
+	}
+}
+
+.pagination .page-numbers,
+.pagination .current,
+.pagination .dots {
+	display: none;
+	@include breakpoint(m) {
+		display: inline-block;
+	}
+}
+
+.pagination .prev.page-numbers,
+.pagination .next.page-numbers {
+	display: block;
+}
+
+.pagination .prev.page-numbers,
+.comment-navigation .nav-previous {
+	margin-left: 0;
+	@include breakpoint(m) {
+		float: left;
+		clear: left;
+	}
+}
+
+.pagination .next.page-numbers,
+.comment-navigation .nav-next {
+	margin-right: 0;
+	@include breakpoint(m) {
+		float: right;
+		clear: right;
+	}
+}
+
+.pagination .current {
+ background-color: $surface-light;
+}
+
+.comment-navigation a {
+	margin: 0;
+}
+
+.blog .site-main .navigation .prev,
+.blog .site-main .navigation .next,
+.archive .site-main .navigation .prev,
+.archive .site-main .navigation .next,
+.search-results .site-main .navigation .prev,
+.search-results .site-main .navigation .next {
+	position: relative;
+	width: $spacing-mobile-7;
+	height: $spacing-mobile-7;
+	margin-bottom: $spacing-mobile-8;
+	@include breakpoint(m) {
+		width: $spacing-desktop-7;
+		height: $spacing-desktop-7;
+	}
+}
+
+.blog .site-main .navigation .prev {
+	float: left;
+}
+
+.blog .site-main .navigation .next {
+	float: right;
+}
+
+.blog .site-main .navigation .meta-nav,
+.archive .site-main .navigation .meta-nav,
+.search-results .site-main .navigation .meta-nav {
+	display: none;
+}
+
+/* Pagination - Single Post */
+.single-post.sidebar-hide-post .post-navigation {
+	max-width: $website-width;
+	margin: 0 auto;
+}
+
+.single-post .nav-links {
+	text-align: left;
+	padding: $spacing-mobile-6 0;
+	@include breakpoint(m) {
+		padding: $spacing-desktop-6 0;
+	}
+}
+
+.single-post .navigation a {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background: none;
+	@include font-light;
+}
+
+.single-post .navigation .nav-thumb {
+	position: relative;
+	float: left;
+	line-height: 0;
+	@include transition-posthover;
+}
+
+.single-post .navigation .nav-title {
+	display: block;
+	float: left;
+	text-align: left;
+	padding: $spacing-mobile-4 $spacing-1;
+	@include breakpoint(m) {
+		padding: $spacing-desktop-4 $spacing-1;
+	}
+}
+
+.single-post.sidebar-hide-post .navigation .nav-title {
+	padding: $spacing-mobile-7 $spacing-1;
+	@include breakpoint(m) {
+		padding: $spacing-desktop-7 $spacing-1;
+	}
+}
+
+.single-post.sidebar-show-post .navigation .nav-title {
+	@include font-medium;
+}
+
+.single-post .navigation .entry-cats {
+	display: block;
+	padding: $spacing-1 0 0 0;
+	@include font-light;
+}
+
+.nav-links .entry-cats span {
+	padding-right: 3px;
+}
+
+.nav-links .entry-cats span:last-of-type:after {
+	display: none;
+}
+
+.single-post .navigation .nav-title .nav-subtitle {
+	display: block;
+	text-align: left;
+	padding: $spacing-2 0 0 0;
+	@include font-light;
+	@include breakpoint(m) {
+		padding: $spacing-2 0 0 0;
+	}
+}
+
+.single-post .navigation .arrow-link.arrow-right {
+	left: auto;
+	right: $spacing-mobile-4;
+}
+
+/* Infinite Scroll */
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
+/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
